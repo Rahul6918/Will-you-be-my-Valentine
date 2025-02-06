@@ -1,158 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love, Barna ❤️</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
-            font-family: 'Arial', sans-serif;
-            transition: background 0.3s;
-            overflow: hidden;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love, Barna ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Arial', sans-serif;
+      transition: background 0.3s;
+      overflow: hidden;
+      text-align: center;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    .container {
+      padding: 20px;
+    }
 
-        h1 {
-            color: #fff;
-            font-size: 2.8em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-        }
+    h1 {
+      color: #fff;
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        .buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-            position: relative;
-        }
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+      position: relative;
+    }
 
-        button {
-            padding: 15px 35px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.3em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    button {
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.3em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        #yesBtn {
-            background: #008000;
-            color: white;
-            z-index: 10;
-        }
+    #yesBtn {
+      background: #008000;
+      color: white;
+      z-index: 10;
+    }
 
-        #noBtn {
-            background: #ff1744;
-            color: white;
-            transition: all 0.3s ease;
-        }
+    #noBtn {
+      background: #ff1744;
+      color: white;
+      transition: all 0.3s ease;
+    }
 
-        button:hover {
-            transform: scale(1.1);
-        }
+    button:hover {
+      transform: scale(1.1);
+    }
 
-        .hidden {
-            display: none !important;
-        }
+    .hidden {
+      display: none !important;
+    }
 
-        .celebration {
-            background: #ffcccb;
-        }
+    .celebration {
+      background: #ffcccb;
+    }
 
-        .gif-container {
-            margin: 30px auto;
-            max-width: 320px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+    .gif-container {
+      margin: 30px auto;
+      max-width: 320px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
 
-        .gif-container img {
-            width: 100%;
-            height: auto;
-        }
+    .gif-container img {
+      width: 100%;
+      height: auto;
+    }
 
-        #message {
-            font-size: 1.6em;
-            color: #fff;
-            margin: 30px 0;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    /* Instead of using the same id on two elements, we use a class "message" */
+    .message {
+      font-size: 1.6em;
+      color: #fff;
+      margin: 30px 0;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <div class="container" id="questionContainer">
-        <h1>My Sweet Barna 🌹</h1>
-        <div class="gif-container">
-            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDVkYjBhcXN6dzZkbGN3bjl1ZzN2c3kxaWF0dmNtMTNhdDJvcjBhMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aKdkqUnbZdscG1IVaq/giphy.gif" alt="Cute puppy with flowers">
-        </div>
-        <p id="message">You make my world brighter. Will you be my Valentine? ❤️</p>
-        <div class="buttons">
-            <button id="yesBtn" onclick="handleYes()">YES! 😍</button>
-            <button id="noBtn" onmouseover="moveButton()" onclick="handleNo()">Hmm... 🤔</button>
-        </div>
+  <div class="container" id="questionContainer">
+    <h1>My Sweet Barna 🌹</h1>
+    <div class="gif-container">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDVkYjBhcXN6dzZkbGN3bjl1ZzN2c3kxaWF0dmNtMTNhdDJvcjBhMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aKdkqUnbZdscG1IVaq/giphy.gif" alt="Cute puppy with flowers">
     </div>
-
-    <div class="container hidden" id="celebrationContainer">
-        <h1>YAY! You've Made My Heart So Happy! 🎉</h1>
-        <div class="gif-container">
-            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExazJ3c2lldjBrdXh5NTJjMjJqMGV0Y2YyN2g0cmtiM2M5cDZyNjV0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XHgmxw0uZIW5O/giphy.gif" alt="Happy couple dancing">
-        </div>
-        <p id="message">I promise to make every day special for you! 🍫❤️</p>
-        <h2>See you on February 14th, my love! 💘</h2>
+    <!-- Keep the id "message" here since it’s used in JavaScript -->
+    <p id="message" class="message">You make my world brighter. Will you be my Valentine? ❤️</p>
+    <div class="buttons">
+      <button id="yesBtn" onclick="handleYes()">YES! 😍</button>
+      <button id="noBtn" onmouseover="moveButton()" onclick="handleNo()">Hmm... 🤔</button>
     </div>
+  </div>
 
-    <script>
-        let yesScale = 1;
-        let noCount = 0;
-        const messages = [
-            "Are you sure? I was going to get you chocolates...",
-            "But I’ve planned something really special for us!",
-            "What if I promise unlimited cuddles?",
-            "Not even for homemade pancakes with syrup? 🥞",
-            "Okay, but what if I write you a love letter?",
-            "Fine... but just know my heart belongs to you anyway! 💖"
-        ];
+  <div class="container hidden" id="celebrationContainer">
+    <h1>YAY! You've Made My Heart So Happy! 🎉</h1>
+    <div class="gif-container">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExazJ3c2lldjBrdXh5NTJjMjJqMGV0Y2YyN2g0cmtiM2M5cDZyNjV0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XHgmxw0uZIW5O/giphy.gif" alt="Happy couple dancing">
+    </div>
+    <!-- Removed duplicate id; using only the "message" class for consistent styling -->
+    <p class="message">I promise to make every day special for you! 🍫❤️</p>
+    <h2>See you on February 14th, my love! 💘</h2>
+  </div>
 
-        function handleYes() {
-            document.body.classList.add('celebration');
-            document.getElementById('questionContainer').classList.add('hidden');
-            document.getElementById('celebrationContainer').classList.remove('hidden');
-        }
+  <script>
+    let yesScale = 1;
+    let noCount = 0;
+    const messages = [
+      "Are you sure? I was going to get you chocolates...",
+      "But I’ve planned something really special for us!",
+      "What if I promise unlimited cuddles?",
+      "Not even for homemade pancakes with syrup? 🥞",
+      "Okay, but what if I write you a love letter?",
+      "Fine... but just know my heart belongs to you anyway! 💖"
+    ];
 
-        function handleNo() {
-            if (noCount >= messages.length) return;
-            
-            noCount++;
-            yesScale += 0.3;
-            document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
-            
-            if (noCount <= messages.length) {
-                document.getElementById('message').textContent = messages[noCount - 1];
-            }
-        }
+    function handleYes() {
+      document.body.classList.add('celebration');
+      document.getElementById('questionContainer').classList.add('hidden');
+      document.getElementById('celebrationContainer').classList.remove('hidden');
+    }
 
-        function moveButton() {
-            if (noCount >= messages.length) {
-                const button = document.getElementById('noBtn');
-                button.style.position = 'absolute';
-                button.style.left = `${Math.random() * 80 + 10}%`;
-                button.style.top = `${Math.random() * 80 + 10}%`;
-            }
-        }
-    </script>
+    function handleNo() {
+      if (noCount >= messages.length) return;
+
+      noCount++;
+      yesScale += 0.3;
+      document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
+
+      if (noCount <= messages.length) {
+        document.getElementById('message').textContent = messages[noCount - 1];
+      }
+    }
+
+    function moveButton() {
+      if (noCount >= messages.length) {
+        const button = document.getElementById('noBtn');
+        // Randomly position the button within its container (which is relatively positioned)
+        button.style.position = 'absolute';
+        button.style.left = `${Math.random() * 80 + 10}%`;
+        button.style.top = `${Math.random() * 80 + 10}%`;
+      }
+    }
+  </script>
 </body>
 </html>
