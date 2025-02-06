@@ -26,7 +26,7 @@
         h1 {
             color: #fff;
             font-size: 2.8em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -34,7 +34,8 @@
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 40px;
+            position: relative;
         }
 
         button {
@@ -48,7 +49,7 @@
         }
 
         #yesBtn {
-            background: ##008000;
+            background: #008000;
             color: white;
             z-index: 10;
         }
@@ -56,7 +57,7 @@
         #noBtn {
             background: #ff1744;
             color: white;
-            position: relative;
+            transition: all 0.3s ease;
         }
 
         button:hover {
@@ -72,7 +73,7 @@
         }
 
         .gif-container {
-            margin: 20px auto;
+            margin: 30px auto;
             max-width: 320px;
             border-radius: 15px;
             overflow: hidden;
@@ -87,7 +88,7 @@
         #message {
             font-size: 1.6em;
             color: #fff;
-            margin: 20px 0;
+            margin: 30px 0;
             text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
         }
     </style>
@@ -133,23 +134,19 @@
         }
 
         function handleNo() {
-    noCount++;
-    if (noCount >= messages.length) {
-        handleYes();
-        return;
-    }
-    yesScale += 0.3;
-    document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
-    document.getElementById('message').textContent = messages[noCount - 1];
+            if (noCount >= messages.length) return;
+            
+            noCount++;
+            yesScale += 0.3;
+            document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
+            
+            if (noCount <= messages.length) {
+                document.getElementById('message').textContent = messages[noCount - 1];
+            }
+        }
 
-    // Start moving the noBtn when the last message is displayed
-    if (noCount === messages.length) {
-        moveButton();
-    }
-}
-        
         function moveButton() {
-            if (noCount > 0) {
+            if (noCount >= messages.length) {
                 const button = document.getElementById('noBtn');
                 button.style.position = 'absolute';
                 button.style.left = `${Math.random() * 80 + 10}%`;
